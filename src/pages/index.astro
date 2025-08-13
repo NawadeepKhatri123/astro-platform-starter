@@ -1,20 +1,55 @@
----
-import Layout from '../layouts/Layout.astro';
-import ContextAlert from '../components/ContextAlert.astro';
-import Markdown from '../components/Markdown.astro';
 
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-ok brv this is it i gues
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
+---
+const menuItems = [
+  { name: "Margherita Pizza", price: "$12", img: "/images/veg.jpg" },
+  { name: "Pepperoni Pizza", price: "$15", img: "/images/veg.jpg" },
+  { name: "Veggie Burger", price: "$10", img: "/images/veg.jpg" },
+  { name: "Caesar Salad", price: "$8", img: "/images/veg.jpg" }
+];
 ---
 
-<Layout title="HEAVENLY FOOD RESTURANT">
-    <ContextAlert class="mb-8" />
-    <h1 class="mb-10">New resturant in town</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    </p>
-</Layout>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mario's Grill</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Mario's Grill 🍔🍕</h1>
+      <nav>
+        <a href="#menu">Menu</a> | 
+        <a href="#contact">Contact</a> | 
+        <a href="https://mariosgrill.square.site" target="_blank">Order Now</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="menu">
+        <h2>Menu</h2>
+        <div class="menu-grid">
+          {menuItems.map(item => (
+            <div class="menu-item">
+              <img src={item.img} alt={item.name} />
+              <h3>{item.name}</h3>
+              <p>{item.price}</p>
+              <a class="order-btn" href="https://mariosgrill.square.site" target="_blank">Order Now</a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>📍 123 Main Street, Toronto, ON</p>
+        <p>📞 (123) 456-7890</p>
+        <p>🕒 Open: 10AM - 10PM</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; {new Date().getFullYear()} Mario's Grill</p>
+    </footer>
+  </body>
+</html>
