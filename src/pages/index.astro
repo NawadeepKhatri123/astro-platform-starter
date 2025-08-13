@@ -12,36 +12,48 @@ const menuItems = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mario's Grill</title>
+    <meta name="description" content="Welcome to HEAVNELY NEPALESE RESTURANT - Serving fresh pizza, burgers, and salads in GP." />
+    <title>THE HEAVENLY RESTURANT</title>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>HEAVENLY RESTURANT 🍔🍕</h1>
+        <p>Delicious food, warm atmosphere, unforgettable taste.</p>
+        <a class="order-btn large" href="https://mariosgrill.square.site" target="_blank">Order Online</a>
+      </div>
+    </section>
+
+    <!-- Navigation -->
     <header>
-      <h1>Mario's Grill 🍔🍕</h1>
       <nav>
-        <a href="#menu">Menu</a> | 
-        <a href="#contact">Contact</a> | 
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
         <a href="https://mariosgrill.square.site" target="_blank">Order Now</a>
       </nav>
     </header>
 
     <main>
+      <!-- Menu -->
       <section id="menu">
-        <h2>Menu</h2>
+        <h2>Our Menu</h2>
         <div class="menu-grid">
           {menuItems.map(item => (
             <div class="menu-item">
               <img src={item.img} alt={item.name} />
               <h3>{item.name}</h3>
-              <p>{item.price}</p>
+              <p class="price">{item.price}</p>
               <a class="order-btn" href="https://mariosgrill.square.site" target="_blank">Order Now</a>
             </div>
           ))}
         </div>
       </section>
 
+      <!-- Contact -->
       <section id="contact">
-        <h2>Contact</h2>
+        <h2>Contact Us</h2>
         <p>📍 123 Main Street, Toronto, ON</p>
         <p>📞 (123) 456-7890</p>
         <p>🕒 Open: 10AM - 10PM</p>
@@ -49,7 +61,7 @@ const menuItems = [
     </main>
 
     <footer>
-      <p>&copy; {new Date().getFullYear()} Mario's Grill</p>
+      <p>&copy; {new Date().getFullYear()} Mario's Grill — All Rights Reserved</p>
     </footer>
   </body>
 </html>
