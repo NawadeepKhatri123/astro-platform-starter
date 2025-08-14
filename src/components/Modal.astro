@@ -1,0 +1,25 @@
+
+---
+const { id, title } = Astro.props;
+---
+
+<dialog id={id} class="modal">
+  <h2>{title}</h2>
+  <slot />
+  <button data-close class="btn">Close</button>
+</dialog>
+
+<style>
+  .modal {
+    padding: 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    max-width: 400px;
+  }
+
+  .btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+</style>
