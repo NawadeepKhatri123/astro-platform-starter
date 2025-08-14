@@ -4,6 +4,11 @@ import menuItems from "../data/menu.json";
 import Modal from "./Modal.astro";
 ---
 
+<section 
+---
+import menuItems from "../data/menu.json";
+---
+
 <section id="menu">
   <h2>Our Menu</h2>
   <div class="menu-grid">
@@ -17,13 +22,4 @@ import Modal from "./Modal.astro";
     ))}
   </div>
 </section>
-<button class="btn" data-open="pickup">Pickup</button>
-<button class="btn" data-open="delivery">Delivery</button>
 
-<Modal id="pickup" title="Pickup Order">
-  <p>Pickup available between 9 AM – 10 PM.</p>
-</Modal>
-
-<Modal id="delivery" title="Delivery Order">
-  <p>Delivery available within 5km radius.</p>
-</Modal>
