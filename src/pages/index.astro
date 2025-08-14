@@ -1,103 +1,87 @@
 
 ---
 import Menu from "../components/Menu.astro";
+import { initModals } from "../components/ModalController.ts";
 import Modal from "../components/Modal.astro";
+import { onMount } from "solid-js";
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Welcome to HEAVENLY NEPALESE RESTAURANT - Authentic flavors in Grande Prairie." />
-    <title>THE HEAVENLY RESTAURANT</title>
+    <title>HEAVENLY RESTAURANT</title>
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    <header>
-      <nav>
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+      <div class="nav-left">
+  <a href="/">
+    <img src="/images/hvn.jpeg" alt="HEAVENLY RESTAURANT" class="logo"/>
+  </a>
+</div>      <nav class="nav-right">
+        <a href="#location">Location</a>
         <a href="#menu">Menu</a>
         <a href="#contact">Contact</a>
-        <a href="https://mariosgrill.square.site" target="_blank">Order Now</a>
       </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-content">
-        <h1>HEAVENLY RESTAURANT 🍔🍕</h1>
+      <img src="/images/hero.jpeg" alt="Restaurant Interior" class="hero-img"/>
+      <div class="hero-text">
+        <h2>Welcome to HEAVENLY FOOD RESTAURANT</h2>
         <p>Delicious food, warm atmosphere, unforgettable taste.</p>
-        <a class="order-btn" href="https://mariosgrill.square.site" target="_blank">Order Online</a>
       </div>
     </section>
 
-    <!-- Action buttons -->
-    <div class="actions">
-      <button class="action-btn" data-open="delivery">🚚 Delivery</button>
-      <button class="action-btn" data-open="pickup">📦 Pickup</button>
-    </div>
+    <!-- Call-to-Action Buttons -->
+    <section class="cta-buttons">
+      <button class="cta-btn" data-open="pickup">📦 Pickup</button>
+      <button class="cta-btn" data-open="delivery">🚚 Delivery</button>
+    </section>
 
-
-<Modal id="delivery" title="Delivery Order">
-  <form>
-    <label>
-      Enter your address:
-      <input type="text" name="address" placeholder="123 Main St" required />
-    </label>
-    <button type="submit" class="btn">Submit</button>
-  </form>
-</Modal>
-
-<Modal id="pickup" title="Pickup Order">
-  <form>
-    <label>
-      Enter your name:
-      <input type="text" name="name" placeholder="Your Name" required />
-    </label>
-    <label>
-      Pickup time:
-      <input type="time" name="time" required />
-    </label>
-    <button type="submit" class="btn">Submit</button>
-  </form>
-</Modal>
-
-
-    <!-- Menu -->
+    <!-- Menu Component -->
     <Menu />
 
+    <!-- Modals for Pickup and Delivery -->
+    <Modal id="pickup" title="Pickup Order">
+      <form>
+        <label for="pickup-name">Your Name:</label>
+        <input type="text" id="pickup-name" name="pickup-name" required>
+        <label for="pickup-time">Pickup Time:</label>
+        <input type="time" id="pickup-time" name="pickup-time" required>
+        <button type="submit">Confirm Pickup</button>
+      </form>
+    </Modal>
+
+    <Modal id="delivery" title="Delivery Order">
+      <form>
+        <label for="delivery-address">Delivery Address:</label>
+        <input type="text" id="delivery-address" name="delivery-address" required>
+        <label for="delivery-contact">Contact Number:</label>
+        <input type="tel" id="delivery-contact" name="delivery-contact" required>
+        <button type="submit">Confirm Delivery</button>
+      </form>
+    </Modal>
+
+    <!-- Contact Section -->
     <section id="contact">
-      <div>
-        <h2>Contact Us</h2>
-        <p>📍 123 Main Street, Toronto, ON</p>
-        <p>📞 (123) 456-7890</p>
-        <p>🕒 Open: 10AM - 10PM</p>
-      </div>
-      <div>
-        <h2>Hours</h2>
-        <p>Mon - Fri: 11am - 9pm</p>
-        <p>Sat - Sun: 10am - 9pm</p>
-      </div>
+      <h2>Contact Us</h2>
+      <p>📍 123 Main Street, Toronto, ON</p>
+      <p>📞 (123) 456-7890</p>
+      <p>🕒 Open: 10AM - 10PM</p>
     </section>
 
+    <!-- Footer -->
     <footer>
-      <p>&copy; 2025 THE HEAVENLY RESTAURANT — All Rights Reserved</p>
+      <p>&copy; 2025 HEAVENLY RESTAURANT — All Rights Reserved</p>
     </footer>
 
-    <!-- Modal JS -->
-    <script is:inline>
-      const buttons = document.querySelectorAll('[data-open]');
-      const modals = document.querySelectorAll('dialog');
-
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const id = btn.dataset.open;
-          const modal = document.getElementById(id);
-          if(modal) modal.showModal();
-        });
-      });
-
-      modals.forEach(modal => {
-        const closeBtn = modal.querySelector('[data-close]');
-        if(closeBtn) closeBtn.addEventListener('click', () => modal.close());
+    <script>
+      onMount(() => {
+        initModals();
       });
     </script>
   </body>
