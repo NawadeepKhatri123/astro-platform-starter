@@ -1,67 +1,88 @@
 
----
-const menuItems = [
-  { name: "MOMO", price: "$12", img: "/images/momo.jpg" },
-  { name: "CHOWMIEN", price: "$15", img: "/images/chow.jpg" },
-  { name: "THUKPA", price: "$10", img: "/images/thukpa.jpg" },
-  { name: "SEKWA", price: "$8", img: "/images/sekwa.jpg" }
-];
----
-
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Welcome to HEAVNELY NEPALESE RESTURANT - Serving fresh pizza, burgers, and salads in GP." />
-    <title>THE HEAVENLY RESTURANT</title>
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>HEAVENLY RESTURANT 🍔🍕</h1>
-        <p>Delicious food, warm atmosphere, unforgettable taste.</p>
-        <a class="order-btn large" href="https://mariosgrill.square.site" target="_blank">Order Online</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to HEAVENLY NEPALESE RESTAURANT - Authentic flavors in Grande Prairie.">
+  <title>THE HEAVENLY RESTAURANT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+      <a href="https://mariosgrill.square.site" target="_blank">Order Now</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>HEAVENLY RESTAURANT 🍔🍕</h1>
+      <p>Delicious food, warm atmosphere, unforgettable taste.</p>
+      <a class="order-btn" href="https://mariosgrill.square.site" target="_blank">Order Online</a>
+    </div>
+  </section>
+
+  <!-- Actions -->
+  <div class="actions">
+    <div class="action-btn">🚚 Delivery</div>
+    <div class="action-btn">📦 Pickup</div>
+  </div>
+
+  <!-- Menu -->
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="/images/momo.jpg" alt="MOMO">
+        <h3>MOMO</h3>
+        <p class="price">$12</p>
+        <a class="order-btn" href="#">Order Now</a>
       </div>
-    </section>
+      <div class="menu-item">
+        <img src="/images/chow.jpg" alt="CHOWMIEN">
+        <h3>CHOWMIEN</h3>
+        <p class="price">$15</p>
+        <a class="order-btn" href="#">Order Now</a>
+      </div>
+      <div class="menu-item">
+        <img src="/images/thukpa.jpg" alt="THUKPA">
+        <h3>THUKPA</h3>
+        <p class="price">$10</p>
+        <a class="order-btn" href="#">Order Now</a>
+      </div>
+      <div class="menu-item">
+        <img src="/images/sekwa.jpg" alt="SEKWA">
+        <h3>SEKWA</h3>
+        <p class="price">$8</p>
+        <a class="order-btn" href="#">Order Now</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Navigation -->
-    <header>
-      <nav>
-        <a href="#menu">Menu</a>
-        <a href="#contact">Contact</a>
-        <a href="https://mariosgrill.square.site" target="_blank">Order Now</a>
-      </nav>
-    </header>
+  <!-- Contact -->
+  <section id="contact">
+    <div>
+      <h2>Contact Us</h2>
+      <p>📍 123 Main Street, Toronto, ON</p>
+      <p>📞 (123) 456-7890</p>
+      <p>🕒 Open: 10AM - 10PM</p>
+    </div>
+    <div>
+      <h2>Hours</h2>
+      <p>Mon - Fri: 11am - 12am</p>
+      <p>Sat - Sun: 10am - 12am</p>
+      <p>Social Hour: 2pm - 5pm & 9pm - close</p>
+    </div>
+  </section>
 
-    <main>
-      <!-- Menu -->
-      <section id="menu">
-        <h2>Our Menu</h2>
-        <div class="menu-grid">
-          {menuItems.map(item => (
-            <div class="menu-item">
-              <img src={item.img} alt={item.name} />
-              <h3>{item.name}</h3>
-              <p class="price">{item.price}</p>
-              <a class="order-btn" href="https://mariosgrill.square.site" target="_blank">Order Now</a>
-            </div>
-          ))}
-        </div>
-      </section>
+  <footer>
+    <p>&copy; 2025 THE HEAVENLY RESTAURANT — All Rights Reserved</p>
+  </footer>
 
-      <!-- Contact -->
-      <section id="contact">
-        <h2>Contact Us</h2>
-        <p>📍 123 Main Street, Toronto, ON</p>
-        <p>📞 (123) 456-7890</p>
-        <p>🕒 Open: 10AM - 10PM</p>
-      </section>
-    </main>
-
-    <footer>
-      <p>&copy; {new Date().getFullYear()} THE HEAVENLY RESTURANT — All Rights Reserved</p>
-    </footer>
-  </body>
+</body>
 </html>
+
