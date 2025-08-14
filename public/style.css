@@ -16,6 +16,7 @@ nav {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -78,6 +79,7 @@ nav a:hover {
   justify-content: center;
   gap: 2rem;
   margin: 3rem 0;
+  flex-wrap: wrap;
 }
 
 .action-btn {
@@ -147,4 +149,26 @@ footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .action-btn {
+    width: 90%;
+  }
+  #contact {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }

@@ -1,0 +1,7 @@
+
+[
+  { "name": "MOMO", "price": 12, "img": "/images/momo.jpg" },
+  { "name": "CHOWMIEN", "price": 15, "img": "/images/chow.jpg" },
+  { "name": "THUKPA", "price": 10, "img": "/images/thukpa.jpg" },
+  { "name": "SEKWA", "price": 8, "img": "/images/sekwa.jpg" }
+]
