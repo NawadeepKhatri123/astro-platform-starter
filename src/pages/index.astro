@@ -1,7 +1,7 @@
 
-
 ---
 import Menu from "../components/Menu.astro";
+import Modal from "../components/Modal.astro";
 ---
 
 <html lang="en">
@@ -29,11 +29,39 @@ import Menu from "../components/Menu.astro";
       </div>
     </section>
 
+    <!-- Action buttons -->
     <div class="actions">
-      <div class="action-btn">🚚 Delivery</div>
-      <div class="action-btn">📦 Pickup</div>
+      <button class="action-btn" data-open="delivery">🚚 Delivery</button>
+      <button class="action-btn" data-open="pickup">📦 Pickup</button>
     </div>
 
+
+<Modal id="delivery" title="Delivery Order">
+  <form>
+    <label>
+      Enter your address:
+      <input type="text" name="address" placeholder="123 Main St" required />
+    </label>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</Modal>
+
+<Modal id="pickup" title="Pickup Order">
+  <form>
+    <label>
+      Enter your name:
+      <input type="text" name="name" placeholder="Your Name" required />
+    </label>
+    <label>
+      Pickup time:
+      <input type="time" name="time" required />
+    </label>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</Modal>
+
+
+    <!-- Menu -->
     <Menu />
 
     <section id="contact">
@@ -53,5 +81,25 @@ import Menu from "../components/Menu.astro";
     <footer>
       <p>&copy; 2025 THE HEAVENLY RESTAURANT — All Rights Reserved</p>
     </footer>
+
+    <!-- Modal JS -->
+    <script is:inline>
+      const buttons = document.querySelectorAll('[data-open]');
+      const modals = document.querySelectorAll('dialog');
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.open;
+          const modal = document.getElementById(id);
+          if(modal) modal.showModal();
+        });
+      });
+
+      modals.forEach(modal => {
+        const closeBtn = modal.querySelector('[data-close]');
+        if(closeBtn) closeBtn.addEventListener('click', () => modal.close());
+      });
+    </script>
   </body>
 </html>
+
