@@ -3,6 +3,7 @@
 import { initModals } from "../components/ModalController.ts";
 import Modal from "../components/Modal.astro";
 ---
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -12,12 +13,10 @@ import Modal from "../components/Modal.astro";
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
+  <!-- Navbar -->
   <header class="navbar">
     <div class="nav-left">
-      <a href="/">
-        <img src="/images/hvn.jpeg" alt="HEAVENLY RESTAURANT" class="logo"/>
-      </a>
+      <a href="/"><img src="/images/hvn.jpeg" alt="HEAVENLY RESTAURANT" class="logo"/></a>
     </div>
     <nav class="nav-right">
       <a href="#location">Location</a>
@@ -25,9 +24,8 @@ import Modal from "../components/Modal.astro";
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <img src="/images/hero.jpeg" alt="Restaurant Interior" class="hero-img"/>
     <div class="hero-text">
       <h2>Welcome to HEAVENLY FOOD RESTAURANT</h2>
       <p>Delicious food, warm atmosphere, unforgettable taste.</p>
@@ -36,42 +34,68 @@ import Modal from "../components/Modal.astro";
 
   <!-- Info Section -->
   <section class="info-section">
-    <!-- Left side -->
     <div class="info-left">
-      <div class="big-btn-row">
-        
-<button class="cta-btn" onclick="window.open('https://heavenly-food-restaurant.square.site', '_blank')">📦 Pickup</button>
-<button class="cta-btn" onclick="window.open('https://heavenly-food-restaurant.square.site', '_blank')">🚚 Delivery</button>
+
+      <!-- Group 1: Pickup + Delivery -->
+      <div class="big-btn-row group1">
+        <!-- Pickup Button -->
+        <a href="https://heavenly-food-restaurant.square.site" target="_blank" class="big-btn pickup">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round"
+              viewBox="0 0 24 24" width="20" height="20" style="margin-right:8px;">
+            <path d="M21 16V8a2 2 0 0 0-2-2h-3.34a2 2 0 0 1-1.41-.59l-1.66-1.66A2 2 0 0 0 10.18 3H7a2 2 0 0 0-2 2v11"/>
+            <rect x="3" y="16" width="18" height="5" rx="2" ry="2"></rect>
+          </svg>
+          Pickup
+        </a>
+
+        <!-- Delivery Button -->
+        <a href="https://heavenly-food-restaurant.square.site" target="_blank" class="big-btn delivery">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round"
+              viewBox="0 0 24 24" width="20" height="20" style="margin-right:8px;">
+            <path d="M3 18v-6h4V6h5l3 4h4l2 4h-3"></path>
+            <circle cx="7" cy="18" r="2"></circle>
+            <circle cx="17" cy="18" r="2"></circle>
+          </svg>
+          Delivery
+        </a>
       </div>
 
-      <div class="small-btn-grid">
+      <!-- Group 2: Menu + Contact -->
+      <div class="small-btn-grid group2">
         <a href="/menu" class="small-btn">Menu</a>
         <button class="small-btn" data-open="contactModal">Contact Us</button>
-        <a href="https://www.google.com/maps/place/Heavenly+Food+Restaurant/@55.1704966,-118.7913443,15.65z/data=!4m6!3m5!1s0x539091996524b043:0xebc37e738176f27a!8m2!3d55.1708464!4d-118.7993025!16s%2Fg%2F11v9cwy6c3?entry=ttu&g_ep=EgoyMDI1MDgxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="small-btn">Location</a>
+      </div>
+
+      <!-- Restaurant Info -->
+      <div class="info-right">
+        <p>Heavenly Food Restaurant is located in beautiful Grande Prairie, Alberta. We are proud to be one of the top-rated restaurants in the city thanks to our wonderful staff and guests.</p>
+        <div class="contact-info">
+          <p><strong>Information</strong></p>
+          <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Grande Prairie, Alberta</p>
+          <p><strong>Hours of Operation</strong><br>
+          Monday - Friday: 11am - 12am<br>
+          Saturday - Sunday: 10am - 12am</p>
+          <p><strong>Chill Hours</strong><br>
+          Daily from 2pm - 5pm & 9pm - close</p>
+        </div>
+      </div>
+
+      <!-- Group 3: Location + Share Feedback -->
+      <div class="small-btn-grid group3">
+        <a href="https://www.google.com/maps/place/Heavenly+Food+Restaurant" target="_blank" class="small-btn">Location</a>
         <a href="#" class="small-btn">Share Feedback</a>
       </div>
-    </div>
 
-    <!-- Right side -->
-    <div class="info-right">
-      <p>Heavenly Food Restaurant is located in beautiful Grande Prairie, Alberta. We are proud to say that our location is one of the top-rated restaurants in the city thanks to all our wonderful staff and guests.</p>
-      <div class="contact-info">
-        <p><strong>Information</strong></p>
-        <p>📞 (123) 456-7890</p>
-        <p>📍 123 Main Street, Grande Prairie, Alberta</p>
-        <p><strong>Hours of Operation</strong><br>
-        Monday - Friday: 11am - 12am<br>
-        Saturday - Sunday: 10am - 12am</p>
-        <p><strong>Chill Hours</strong><br>
-        Daily from 2pm - 5pm & 9pm - close</p>
-      </div>
     </div>
   </section>
 
   <!-- Contact Modal -->
   <Modal id="contactModal" title="Contact Us">
-    <p>📞 (123) 456-7890</p>
-    <p>📧 info@heavenlyrestaurant.com</p>
+    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+    <p><i class="fas fa-envelope"></i> info@heavenlyrestaurant.com</p>
   </Modal>
 
   <!-- Footer -->

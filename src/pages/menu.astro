@@ -4,6 +4,12 @@ import menuItems from "../data/menu.json";
 ---
 
 <html lang="en">
+
+---
+import menuItems from "../data/menu.json";
+---
+
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,9 +21,7 @@ import menuItems from "../data/menu.json";
   <!-- Navigation -->
   <header class="navbar">
     <div class="nav-left">
-      <a href="/">
-        <img src="/images/hvn.jpeg" alt="HEAVENLY RESTAURANT" class="logo"/>
-      </a>
+      <a href="/"><img src="/images/hvn.jpeg" alt="HEAVENLY RESTAURANT" class="logo"/></a>
     </div>
     <nav class="nav-right">
       <a href="/">Home</a>
@@ -35,7 +39,7 @@ import menuItems from "../data/menu.json";
           <img src={item.img} alt={item.name} />
           <h3>{item.name}</h3>
           <p class="price">${item.price}</p>
-          <a class="order-btn" href="https://mariosgrill.square.site" target="_blank">Order Now</a>
+          <a class="order-btn" href="https://heavenly-food-restaurant.square.site" target="_blank">Order Now</a>
         </div>
       ))}
     </div>
@@ -48,3 +52,4 @@ import menuItems from "../data/menu.json";
 
 </body>
 </html>
+

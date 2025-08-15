@@ -1,46 +1,49 @@
 
-
-/* General Styles */
+/* --- RESET & BASE --- */
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background-color: #fff;
 }
 
-/* Navigation Bar */
+/* --- NAVIGATION BAR --- */
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  align-items: center;
+  padding: 15px 20px;
   background-color: #333;
   color: white;
 }
-
-.nav-left h1 {
-  margin: 0;
+.nav-left img.logo {
+  height: 50px;
+  width: auto;
 }
-
 .nav-right a {
   color: white;
   text-decoration: none;
   margin-left: 20px;
 }
+.nav-right a:hover {
+  text-decoration: underline;
+}
 
-/* Hero Section */
+/* --- HERO SECTION --- */
 .hero {
   position: relative;
-  width: 100%;
   height: 400px;
-  overflow: hidden;
+  background: url('/images/hero.jpeg') center/cover no-repeat;
 }
-
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7));
 }
-
 .hero-text {
   position: absolute;
   top: 50%;
@@ -48,255 +51,49 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
-
 .hero-text h2 {
-  font-size: 2.5rem;
-  margin: 0;
-}
-
-.hero-text p {
-  font-size: 1.2rem;
-}
-
-/* Call-to-Action Buttons */
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.cta-btn {
-  background-color: #f4a261;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 10px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  border-radius: 5px;
-}
-
-.cta-btn:hover {
-  background-color: #e76f51;
-}
-
-/* Menu Component */
-#menu {
-  padding: 20px;
-  background-color: #f4f4f4;
-}
-
-#menu h2 {
-  text-align: center;
   font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
-
-/* Contact Section */
-#contact {
-  padding: 20px;
-  background-color: #fff;
-  text-align: center;
-}
-
-#contact h2 {
-  font-size: 2rem;
-}
-
-/* Footer */
-footer {
-  padding: 20px;
-  background-color: #333;
-  color: white;
-  text-align: center;
-}
-
-/* Container for menu items */
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
-  justify-items: center;
-}
-
-/* Individual menu item styling */
-.menu-item {
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.menu-item:hover {
-  transform: translateY(-5px);
-}
-
-/* Image within each menu item */
-.menu-item img {
-  width: 100%;
-  height: auto;
-  max-width: 200px; /* Adjust this value as needed */
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-/* Menu item name */
-.menu-item h3 {
-  font-size: 1.25rem;
-  margin: 0.5rem 0;
-}
-
-/* Price styling */
-.menu-item .price {
-  font-size: 1.1rem;
-  color: #333;
-  margin: 0.5rem 0;
-}
-
-/* Order button styling */
-.menu-item .order-btn {
-  background-color: #ff5722;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-
-.menu-item .order-btn:hover {
-  background-color: #e64a19;
-}
-
-.nav-left img.logo {
-  height: 50px;        /* Adjust the height to fit nav */
-  width: auto;
-  object-fit: contain;
-}
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #0077cc; /* bright blue text */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* optional: adds readability */
-}
-
-.hero-text h2 {
-  font-size: 2.5rem;
-  margin: 0;
-}
-
 .hero-text p {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
-.hero-img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  filter: brightness(70%); /* darkens image */
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #0077cc;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-}
-
-
-.info-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 40px;
-  background-color: #444;
-  color: white;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.info-left, .info-right {
-  flex: 1;
-  min-width: 250px;
-}
-
-.big-btn {
-  display: block;
-  text-align: center;
-  font-size: 1.2rem;
-  padding: 15px 20px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  background-color: #f4a261;
-  color: white;
-  transition: opacity 0.3s ease;
-}
-
-.big-btn.delivery {
-  background-color: orange;
-}
-
-.big-btn.pickup {
-  background-color: #ffcc00;
-  color: black;
-}
-
-.big-btn:hover {
-  opacity: 0.85;
-}
-
-.contact-info p {
-  margin: 5px 0;
-}
-
+/* --- BUTTONS --- */
 .big-btn-row {
   display: flex;
   gap: 10px;
   margin-bottom: 15px;
 }
-
 .big-btn {
   flex: 1;
-  text-align: center;
-  font-size: 1.2rem;
-  padding: 15px 0;
+  padding: 14px 20px;
   border-radius: 8px;
+  text-align: center;
+  font-size: 1.1rem;
   font-weight: bold;
   text-decoration: none;
-  color: white;
+  transition: opacity 0.3s ease;
 }
-
-.big-btn.delivery {
-  background-color: orange;
-}
-
 .big-btn.pickup {
   background-color: #ffcc00;
   color: black;
 }
-
+.big-btn.delivery {
+  background-color: orange;
+  color: white;
+}
 .big-btn:hover {
   opacity: 0.85;
 }
-
 .small-btn-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
-
 .small-btn {
   background-color: #666;
   color: white;
@@ -305,22 +102,49 @@ footer {
   text-align: center;
   text-decoration: none;
   font-size: 0.95rem;
-  cursor: pointer;
-  border: none;
 }
-
 .small-btn:hover {
   background-color: #888;
 }
 
+/* --- INFO SECTION --- */
+.info-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: #444;
+  color: white;
+}
+.info-left, .info-right {
+  flex: 1;
+  min-width: 250px;
+}
+.contact-info p {
+  margin: 5px 0;
+}
+.contact-info i {
+  margin-right: 8px;
+  color: #f4a261;
+}
+
+/* --- MENU COMPONENT --- */
+#menu {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+#menu h2 {
+  text-align: center;
+  font-size: 2rem;
+}
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
-  padding: 1rem;
   justify-items: center;
 }
-
 .menu-item {
   background-color: #f8f8f8;
   border-radius: 8px;
@@ -329,11 +153,9 @@ footer {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
-
 .menu-item:hover {
   transform: translateY(-5px);
 }
-
 .menu-item img {
   width: 100%;
   height: auto;
@@ -341,29 +163,69 @@ footer {
   border-radius: 8px;
   margin-bottom: 1rem;
 }
-
 .menu-item h3 {
   font-size: 1.25rem;
   margin: 0.5rem 0;
 }
-
 .menu-item .price {
   font-size: 1.1rem;
   color: #333;
   margin: 0.5rem 0;
 }
-
 .menu-item .order-btn {
   background-color: #ff5722;
   color: white;
   padding: 0.5rem 1rem;
-  border: none;
   border-radius: 5px;
   text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease;
 }
-
 .menu-item .order-btn:hover {
   background-color: #e64a19;
+}
+
+/* --- FOOTER --- */
+footer {
+  font-size: 0.85rem;
+  color: #aaa;
+  border-top: 1px solid #555;
+  background-color: #222;
+  text-align: center;
+  padding: 15px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+  .big-btn {
+    font-size: 1rem;
+  }
+  .info-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .info-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Make each button row full width on mobile */
+  .big-btn-row, .small-btn-grid {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Ensure Menu + Contact stay together above text */
+  .group2 {
+    margin-bottom: 20px;
+  }
+
+  /* Move Location + Share Feedback to bottom */
+  .group3 {
+    margin-top: 20px;
+  }
 }

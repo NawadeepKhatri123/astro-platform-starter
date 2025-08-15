@@ -1,12 +1,6 @@
 
 ---
 import menuItems from "../data/menu.json";
-import Modal from "./Modal.astro";
----
-
-<section 
----
-import menuItems from "../data/menu.json";
 ---
 
 <section id="menu">
@@ -17,9 +11,7 @@ import menuItems from "../data/menu.json";
         <img src={item.img} alt={item.name} />
         <h3>{item.name}</h3>
         <p class="price">${item.price}</p>
-        
-<a class="order-btn" href="https://heavenly-food-restaurant.square.site" target="_blank">Order Now</a>
-
+        <a class="order-btn" href="https://heavenly-food-restaurant.square.site" target="_blank">Order Now</a>
       </div>
     ))}
   </div>
