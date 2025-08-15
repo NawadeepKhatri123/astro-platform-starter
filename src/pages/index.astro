@@ -1,89 +1,86 @@
 
 ---
-import Menu from "../components/Menu.astro";
 import { initModals } from "../components/ModalController.ts";
 import Modal from "../components/Modal.astro";
-import { onMount } from "solid-js";
 ---
-
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HEAVENLY RESTAURANT</title>
-    <link rel="stylesheet" href="/style.css">
-  </head>
-  <body>
-    <!-- Top Navigation Bar -->
-    <header class="navbar">
-      <div class="nav-left">
-  <a href="/">
-    <img src="/images/hvn.jpeg" alt="HEAVENLY RESTAURANT" class="logo"/>
-  </a>
-</div>      <nav class="nav-right">
-        <a href="#location">Location</a>
-        <a href="#menu">Menu</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HEAVENLY RESTAURANT</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <img src="/images/hero.jpeg" alt="Restaurant Interior" class="hero-img"/>
-      <div class="hero-text">
-        <h2>Welcome to HEAVENLY FOOD RESTAURANT</h2>
-        <p>Delicious food, warm atmosphere, unforgettable taste.</p>
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="/">
+        <img src="/images/hvn.jpeg" alt="HEAVENLY RESTAURANT" class="logo"/>
+      </a>
+    </div>
+    <nav class="nav-right">
+      <a href="#location">Location</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="/images/hero.jpeg" alt="Restaurant Interior" class="hero-img"/>
+    <div class="hero-text">
+      <h2>Welcome to HEAVENLY FOOD RESTAURANT</h2>
+      <p>Delicious food, warm atmosphere, unforgettable taste.</p>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section class="info-section">
+    <!-- Left side -->
+    <div class="info-left">
+      <div class="big-btn-row">
+        <a href="#" class="big-btn delivery">🚚 DELIVERY</a>
+        <a href="#" class="big-btn pickup">📦 PICKUP</a>
       </div>
-    </section>
 
-    <!-- Call-to-Action Buttons -->
-    <section class="cta-buttons">
-      <button class="cta-btn" data-open="pickup">📦 Pickup</button>
-      <button class="cta-btn" data-open="delivery">🚚 Delivery</button>
-    </section>
+      <div class="small-btn-grid">
+        <a href="/menu" class="small-btn">Menu</a>
+        <button class="small-btn" data-open="contactModal">Contact Us</button>
+        <a href="https://www.google.com/maps/place/Heavenly+Food+Restaurant/@55.1704966,-118.7913443,15.65z/data=!4m6!3m5!1s0x539091996524b043:0xebc37e738176f27a!8m2!3d55.1708464!4d-118.7993025!16s%2Fg%2F11v9cwy6c3?entry=ttu&g_ep=EgoyMDI1MDgxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="small-btn">Location</a>
+        <a href="#" class="small-btn">Share Feedback</a>
+      </div>
+    </div>
 
-    <!-- Menu Component -->
-    <Menu />
+    <!-- Right side -->
+    <div class="info-right">
+      <p>Heavenly Food Restaurant is located in beautiful Grande Prairie, Alberta. We are proud to say that our location is one of the top-rated restaurants in the city thanks to all our wonderful staff and guests.</p>
+      <div class="contact-info">
+        <p><strong>Information</strong></p>
+        <p>📞 (123) 456-7890</p>
+        <p>📍 123 Main Street, Grande Prairie, Alberta</p>
+        <p><strong>Hours of Operation</strong><br>
+        Monday - Friday: 11am - 12am<br>
+        Saturday - Sunday: 10am - 12am</p>
+        <p><strong>Chill Hours</strong><br>
+        Daily from 2pm - 5pm & 9pm - close</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Modals for Pickup and Delivery -->
-    <Modal id="pickup" title="Pickup Order">
-      <form>
-        <label for="pickup-name">Your Name:</label>
-        <input type="text" id="pickup-name" name="pickup-name" required>
-        <label for="pickup-time">Pickup Time:</label>
-        <input type="time" id="pickup-time" name="pickup-time" required>
-        <button type="submit">Confirm Pickup</button>
-      </form>
-    </Modal>
+  <!-- Contact Modal -->
+  <Modal id="contactModal" title="Contact Us">
+    <p>📞 (123) 456-7890</p>
+    <p>📧 info@heavenlyrestaurant.com</p>
+  </Modal>
 
-    <Modal id="delivery" title="Delivery Order">
-      <form>
-        <label for="delivery-address">Delivery Address:</label>
-        <input type="text" id="delivery-address" name="delivery-address" required>
-        <label for="delivery-contact">Contact Number:</label>
-        <input type="tel" id="delivery-contact" name="delivery-contact" required>
-        <button type="submit">Confirm Delivery</button>
-      </form>
-    </Modal>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 HEAVENLY RESTAURANT — All Rights Reserved</p>
+  </footer>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>📍 123 Main Street, Toronto, ON</p>
-      <p>📞 (123) 456-7890</p>
-      <p>🕒 Open: 10AM - 10PM</p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 HEAVENLY RESTAURANT — All Rights Reserved</p>
-    </footer>
-
-    <script is:client>
-      onMount(() => {
-        initModals();
-      });
-    </script>
-  </body>
+  <script is:client>
+    initModals();
+  </script>
+</body>
 </html>
 

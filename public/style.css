@@ -212,3 +212,103 @@ footer {
   color: #0077cc;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
+
+
+.info-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px;
+  background-color: #444;
+  color: white;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-left, .info-right {
+  flex: 1;
+  min-width: 250px;
+}
+
+.big-btn {
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #f4a261;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.big-btn.delivery {
+  background-color: orange;
+}
+
+.big-btn.pickup {
+  background-color: #ffcc00;
+  color: black;
+}
+
+.big-btn:hover {
+  opacity: 0.85;
+}
+
+.contact-info p {
+  margin: 5px 0;
+}
+
+.big-btn-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.big-btn {
+  flex: 1;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 15px 0;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.big-btn.delivery {
+  background-color: orange;
+}
+
+.big-btn.pickup {
+  background-color: #ffcc00;
+  color: black;
+}
+
+.big-btn:hover {
+  opacity: 0.85;
+}
+
+.small-btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.small-btn {
+  background-color: #666;
+  color: white;
+  padding: 10px 0;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+}
+
+.small-btn:hover {
+  background-color: #888;
+}
